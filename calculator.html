@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body style="align-items: center;">
+  <h1>CACULATOR USING HTML</h1>
+  <table style="background-color: aquamarine;text-align: justify;padding-left: 50%;">
+    <tr>
+      <td  colspan="3"><input type="text"  id="rahul" style="background-color: black;color: azure;"></td>
+      <td colspan="1"><button style="color: aliceblue ;background-color: black;" onclick="clear()">Del</button></td>
+    </tr>
+    <tr>
+      <td colspan="1"><input type="button" value="1" id="a" onclick="display('1')"></td>
+      <td colspan="1"><input type="button" value="2" id="b" onclick="display('2')"></td>
+      <td colspan="1"><input type="button" value="3" id="c" onclick="display('3')"></td>
+      <td colspan="1"><input type="button" value="+" id="d" onclick="display('+')"></td>
+
+    </tr>
+    <tr>
+      <td colspan="1"><input type="button" value="4" id="e" onclick="display('4')"></td>
+      <td colspan="1"><input type="button" value="5" id="f" onclick="display('5')"></td>
+      <td colspan="1"><input type="button" value="6" id="g" onclick="display('6')"></td>
+      <td colspan="1"><input type="button" value="-" id="h" onclick="display('-')"></td>+
+
+    </tr>
+    <tr>
+      <td colspan="1"><input type="button" value="7" id="i" onclick="display('7')"></td>
+      <td colspan="1"><input type="button" value="8" id="j" onclick="display('8')"></td>
+      <td colspan="1"><input type="button" value="9" id="k" onclick="display('9')"></td>
+      <td colspan="1"><input type="button" value="*" id="l" onclick="display('*')"></td>
+
+    </tr>
+    <tr>
+      <td colspan="1"><input type="button" value="/" id="m" onclick="display('/')"></td>
+      <td colspan="1"><input type="button" value="0" id="n" onclick="display('0')"></td>
+      <td colspan="1"><input type="button" value="." id="o" onclick="display('.')"></td>
+      <td colspan="1"><input type="button" value="=" id="p" onclick="result()"></td>
+
+    </tr>
+
+  </table>
+  <script>
+    function clear()
+    {
+      document.getElementById("rahul").value="";
+    }
+    function display(value)
+    {
+      document.getElementById("rahul").value+=value;
+    }
+    function result()
+    {
+      var p=document.getElementById("rahul").value;
+      var q=eval(p);
+
+      document.getElementById("rahul").value=q;
+    }
+  </script>
+</body>
+</html>
