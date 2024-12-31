@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2 style="color: aqua;"> Chivken PizzA</h2>
+  <h1 style="color:red">1000</h1>
+  <input id="sam" type="text">
+  <h2 style="color: aqua;"> ChillyizzA</h2>
+  <h1 style="color:red">100</h1>
+  <input id="sam1" type="text">
+  <h2 style="color: aqua;">  PizzA</h2>
+  <h1 style="color:red">2000</h1>
+  <input id="sam2" type="text">
+  <br>
+  <br>
+  <button type="submit" onclick="func()"> Submit</button>
+  <script>
+    function func()
+    {
+      let sum=0;
+      let a=document.getElementById("sam").value,b=document.getElementById("sam1").value,c=document.getElementById("sam2").value;
+      sum=1000*a+100*b+2000*c;
+      window.alert("the sum is "+sum);
+    }
+  </script>
+</body>
+</html>
