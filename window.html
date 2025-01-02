@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="one()">Alert</button>
+  <button onclick="two()">Prompt</button>
+  <button onclick="three()">Confirm</button>
+
+</body>
+<script>
+  function one()
+  {
+    window.alert("You Have Clicked Alert");
+  }
+  function two()
+  {
+    var c=window.prompt("Enter Any Number:");
+    document.write("You Have Entered a number"+c);
+  }
+  function three() {
+    var b=window.confirm("You click any option");
+    if(b==0)
+  {
+    window.alert("You have entered Yes");
+
+  }
+  else{
+    window.alert("You have entered No");
+  }
+
+  }
+</script>
+</html>
