@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTCUSDT Ticker Upates</title>
+  <style>
+    body{
+      font-family :Arial,san-serif;
+      margin: 20px;
+    }
+    #ticker
+    {
+      font-size: 1.5em;
+
+    }
+  </style>
+</head>
+<body>
+  <h1>Live BTCUSDT Ticker Updates</h1>
+  <button id="start" >Start</button>
+  <button id="stop" >Stop</button>
+  <div id="ticker"></div>
+  <script>
+    let ws;
+    const tdiv=document.getElementById("ticker");
+    const start=document.getElementById("start");
+    const stop=document.getElementById("stop");
+    const turl="wss://fstream.binance.com/ws/btcusdt@ticker"
+
+    start.addEventListener('click',() =>{
+      ws=new WebSocket(turl);
+      ws.onopen=() =>
+    {
+      tdiv.textContent="Connected to BTCUSDT ticker feed .";
+      start.disabled=true;
+      stop.disabled=true;
+    }
+
+
+      ws.onmessage=(event) =>
+    {
+      const data=JSON.parse(event.data);
+      tdiv.textContent=`
+      Symbol : ${data.s}
+      Price : ${data.c}
+      Change :${data.P}%
+      `;
+    }
+     ws.onerror=(error) =>
+     {
+      tdiv.textContent='Error: ${error.message}'
+     };
+
+     ws.onclose =() =>{
+      tdiv.textContent="Connection is Cloosed.";
+      start.disabled=false;
+      stop.disabled=true;
+     }
+    })
+
+  </script>
+</body>
+
+
+</html>
