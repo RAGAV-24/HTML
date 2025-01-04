@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      position: relative;
+      margin-top: 20px;
+    }
+    #animate-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #animate-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+
+  <title>Document</title>
+</head>
+<body>
+<h1>jQuery Animation Example</h1>
+
+<bottom id="animate-btn">Move the box
+</bottom>
+<div id="box"></div>
+<script>
+
+  $(document).ready(function()
+{
+  $('#animate-btn').click(function() {
+    $('#box').animate({
+      left:'500px',
+      opacity:4,
+
+    },1000);
+  });
+});
+</script>
+</body>
+</html>

@@ -34,8 +34,8 @@
     {
       tdiv.textContent="Connected to BTCUSDT ticker feed .";
       start.disabled=true;
-      stop.disabled=true;
-    }
+      stop.disabled=false;
+    };
 
 
       ws.onmessage=(event) =>
@@ -46,7 +46,7 @@
       Price : ${data.c}
       Change :${data.P}%
       `;
-    }
+    };
      ws.onerror=(error) =>
      {
       tdiv.textContent='Error: ${error.message}'
@@ -56,7 +56,16 @@
       tdiv.textContent="Connection is Cloosed.";
       start.disabled=false;
       stop.disabled=true;
+     };
+     stop.addEventListener('click',()=>{
+      if(ws)
+     {
+      ws.close();
+      ws=null;
+
      }
+     });
+
     })
 
   </script>

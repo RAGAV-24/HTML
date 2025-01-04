@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 20px;
+    }
+    #menu {
+      width: 200px;
+      border: 1px solid #ccc;
+    }
+    #menu-header {
+      background-color: blue;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+    }
+    #menu-items {
+      display: none;
+      border-top: 1px solid #ccc;
+    }
+    .menu-item {
+      padding: 10px;
+      background-color: #ccc;
+      border-bottom: 1px solid #aaa;
+      cursor: pointer;
+    }
+    .menu-item:hover {
+      background-color: aliceblue;
+    }
+  </style>
+  <title>jQuery Dropdown Menu Example</title>
+</head>
+<body>
+  <h1>jQuery Drop Down Menu Example</h1>
+  <div id="menu">
+    <div id="menu-header">Menu</div>
+    <div id="menu-items">
+      <div class="menu-item">Sonu</div>
+      <div class="menu-item">Preetham</div>
+      <div class="menu-item">Bob</div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $('#menu-header').click(function() {
+        $('#menu-items').slideToggle();
+      });
+
+      $('.menu-item').click(function() {
+        alert($(this).text() + ' clicked!');
+      });
+    });
+  </script>
+</body>
+</html>

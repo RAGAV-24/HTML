@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div style="text-align: center;align-items: center;">
+    <h1 >Simple Counter</h1>
+    <p id="fec">0<p/>
+    <button onclick="inc()">Increment</button>
+    <button onclick="dec()">Decrement</button>
+    <button onclick="reset()">Reset</button>
+  </div>
+  <script>
+    var a=document.getElementById("fec");
+    let b=0;
+    function inc()
+    {
+      b=b+1;
+      a.textContent=b;
+    }
+    function dec()
+    {
+      b=b-1;
+      a.textContent=b;
+    }
+    function reset()
+    {
+      b=0;
+      a.textContent=0;
+    }
+  </script>
+</body>
+</html>
